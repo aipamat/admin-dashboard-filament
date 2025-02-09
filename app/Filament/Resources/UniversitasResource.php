@@ -29,7 +29,7 @@ class UniversitasResource extends Resource
                 Forms\Components\TextArea::make('visi')->required(),
                 Forms\Components\TextArea::make('misi')->required(),
                 Forms\Components\TextArea::make('alamat')->required(),
-                Forms\Components\TextInput::make('kontak')->required(),
+                Forms\Components\TextInput::make('kontak')->required()
             ]);
     }
 
