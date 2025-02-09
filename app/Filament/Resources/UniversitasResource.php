@@ -17,7 +17,9 @@ class UniversitasResource extends Resource
 {
     protected static ?string $model = Universitas::class;
 
+    protected static ?string $navigationGroup = 'Website Kampus';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    
 
     public static function form(Form $form): Form
     {
