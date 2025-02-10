@@ -34,7 +34,7 @@ class FasilitasResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('foto'),
+                Tables\Columns\ImageColumn::make('foto'),
                 Tables\Columns\TextColumn::make('nama_fasilitas'),
                 Tables\Columns\TextColumn::make('deskripsi')
             ])

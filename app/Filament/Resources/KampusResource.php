@@ -37,9 +37,9 @@ class KampusResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('foto_kampus'),
+                Tables\Columns\ImageColumn::make('foto'),
                 Tables\Columns\TextColumn::make('nama_kampus'),
-                Tables\Columns\TextColumn::make('fasilitas.nama'),
+                Tables\Columns\TextColumn::make('fasilitas.nama_fasilitas'),
                 Tables\Columns\TextColumn::make('alamat')
                 
             ])
