@@ -14,5 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::get('/tentang-kampus', function () {
+    return view('tentang-kampus');
+});
+
+Route::get('/fakultas', function () {
+    return view('fakultas/fakultas');
+});
+
+Route::get('/fakultas-fst', function () {
+    return view('fakultas/fakultas-fst');
+});
+
+Route::get('/fakultas-fisb', function () {
+    return view('fakultas/fakultas-fisb');
+});
+
+Route::get('/fakultas-pasca', function () {
+    return view('fakultas/fakultas-pasca');
 });
