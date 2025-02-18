@@ -6,19 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Fakultas extends Model
+class JurusanFakultas extends Model
 {
     use HasFactory;
     protected $fillable = [
         'banner_fakultas',
-        'deskripsi',
-        'id_fakultas',
-        'gambar_fakultas',
-        'deskripsi_fakultas'
+        'nama_fakultas',
+        'id_dekan'
     ];
 
-    public function jurusan_fakultas(): BelongsTo
+    public function dekan(): BelongsTo
     {
-        return $this->belongsTo(JurusanFakultas::class, 'id_fakultas');
+        return $this->belongsTo(Dekan::class, 'id_dekan');
     }
 }
