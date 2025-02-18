@@ -197,7 +197,7 @@
     <!-- start page title -->
     <section
         class="page-title-separate-breadcrumbs cover-background border-top border-4 border-color-base-color top-space-margin magic-cursor round-cursor"
-        style="background-image:url('images/IWU/about-us.jpg')">
+        style="background-image: url('{{ asset('storage/' . $tentangKampus->first()->banner_tentang_kampus) }}')">
         <div class="opacity-full-dark bg-gradient-dark-transparent"></div>
         <div class="container position-relative">
             <div class="row align-items-start align-items-lg-end justify-content-end flex-column flex-lg-row extra-small-screen"
@@ -205,10 +205,11 @@
                 <div class="col-xxl-7 col-lg-6 col-md-10 position-relative page-title-large md-mb-15px xs-mb-5px">
                     <h1 class="text-white alt-font fw-500 ls-minus-2px mb-0">Tentang Kampus</h1>
                 </div>
-                <div class="col-xxl-5 col-lg-6 col-md-10 last-paragraph-no-margin">
-                    <p class="fs-20 text-white opacity-7 md-w-80 sm-w-100">Kampus kami menawarkan pendidikan berkualitas
-                        dengan fasilitas terbaik, untuk membantu Anda mencapai tujuan akademik dan profesional.</p>
-                </div>
+                @if ($tentangKampus)
+                    <div class="col-xxl-5 col-lg-6 col-md-10 last-paragraph-no-margin">
+                        <p class="fs-20 text-white opacity-7 md-w-80 sm-w-100">{{ $tentangKampus->deskripsi }}</p>
+                    </div>
+                @endif
             </div>
         </div>
     </section>
@@ -219,20 +220,20 @@
         style="background-image: url('images/vertical-center-line-bg.svg')">
         <div class="container overlap-gap-section">
             <div class="row">
+                @if ($tentangKampus)
                 <div class="col-xl-5 col-md-6 offset-xl-1 last-paragraph-no-margin"
                     data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                     <h5 class="alt-font text-dark-gray mb-10px">Visi</h5>
-                    <p class="w-90 lg-w-100">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus enim
-                        asperiores, fuga voluptate voluptates quod rerum dolores perspiciatis iure optio nihil veniam
-                        nulla vero voluptatem cum suscipit, laborum facilis dolorum.</p>
+                    <p class="w-90 lg-w-100">{{ $tentangKampus->visi }}</p>
                 </div>
+                @endif
+                @if ($tentangKampus)
                 <div class="col-xl-5 col-md-6 offset-xl-1 last-paragraph-no-margin"
                     data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                     <h5 class="alt-font text-dark-gray mb-10px">Misi</h5>
-                    <p class="w-90 lg-w-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, obcaecati,
-                        repellendus cupiditate iste impedit sunt voluptatum voluptate beatae, temporibus rerum nihil?
-                        Ratione vero numquam repudiandae beatae possimus provident neque est.</p>
+                    <p class="w-90 lg-w-100">{{ $tentangKampus->misi }}</p>
                 </div>
+                @endif
             </div>
         </div>
     </section>
@@ -252,14 +253,16 @@
                 <!-- start fancy text box item (Rektor) -->
                 <div class="col-12 col-md-4"
                     data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    @if ($rektor)
                     <div class="hover-box md-mb-30px">
-                        <img class="w-50 mx-auto d-block" src="images/IWU/logo.png" alt="Rektor">
+                        <img class="w-50 mx-auto d-block" src="{{ asset('storage/' . $rektor->first()->foto_rektor) }}" alt="Rektor">
                         <div class="p-30px last-paragraph-no-margin text-center">
-                            <span class="d-inline-block fs-22 alt-font">Wakil Rektor</span>
+                            <span class="d-inline-block fs-22 alt-font">{{ $rektor->status }}</span>
                             <p>Bidang Akademik dan Kemahasiswaan</p>
-                            <span class="text-dark">Prof. Dr. Hj. Dewi Indriani Jusuf, S.E., M.Si, CDMP</span>
+                            <span class="text-dark">{{ $rektor->nama_rektor }}</span>
                         </div>
                     </div>
+                    @endif
                 </div>
                 <!-- end fancy text box item (Rektor) -->
             </div>
@@ -267,39 +270,18 @@
             <div class="row justify-content-center mb-5 xs-mb-8"
                 data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <!-- start fancy text box item (Wakil Rektor) -->
+                @foreach ($wakilRektor as $teks)
                 <div class="col-12 col-md-4 mb-30px">
                     <div class="hover-box md-mb-30px">
-                        <img class="w-50 mx-auto d-block" src="images/IWU/logo.png" alt="Rektor">
+                        <img class="w-50 mx-auto d-block" src="{{ asset('storage/' . $teks->first()->foto_wakil_rektor) }}" alt="Rektor">
                         <div class="p-30px last-paragraph-no-margin text-center">
-                            <span class="d-inline-block fs-22 alt-font">Wakil Rektor</span>
-                            <p>Bidang Akademik dan Kemahasiswaan</p>
-                            <span class="text-dark">Prof. Dr. Hj. Dewi Indriani Jusuf, S.E., M.Si, CDMP</span>
+                            <span class="d-inline-block fs-22 alt-font">{{ $teks->status }}</span>
+                            <p>{{ $teks->bidang }}</p>
+                            <span class="text-dark">{{ $teks->nama_wakil_rektor }}</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-12 col-md-4 mb-30px">
-                    <div class="hover-box md-mb-30px">
-                        <img class="w-50 mx-auto d-block" src="images/IWU/logo.png" alt="Rektor">
-                        <div class="p-30px last-paragraph-no-margin text-center">
-                            <span class="d-inline-block fs-22 alt-font">Wakil Rektor</span>
-                            <p>Bidang Akademik dan Kemahasiswaan</p>
-                            <span class="text-dark">Prof. Dr. Hj. Dewi Indriani Jusuf, S.E., M.Si, CDMP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-4 mb-30px">
-                    <div class="hover-box md-mb-30px">
-                        <img class="w-50 mx-auto d-block" src="images/IWU/logo.png" alt="Rektor">
-                        <div class="p-30px last-paragraph-no-margin text-center">
-                            <span class="d-inline-block fs-22 alt-font">Wakil Rektor</span>
-                            <p>Bidang Akademik dan Kemahasiswaan</p>
-                            <span class="text-dark">Prof. Dr. Hj. Dewi Indriani Jusuf, S.E., M.Si, CDMP</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- end fancy text box item (Wakil Rektor) -->
+                @endforeach
             </div>
         </div>
     </section>
@@ -320,7 +302,7 @@
 
                 <!-- Add the image with transform -->
                 <div class="col-12">
-                    <img src="images/IWU/banner.jpg" alt="Struktur Organisasi" class="img-fluid w-100 transform-img" />
+                    <img src="{{ asset('storage/' . $strukturOrganisasi->first()->gambar_struktur) }}" alt="Struktur Organisasi" class="img-fluid w-100 transform-img" />
                 </div>
             </div>
         </div>
@@ -342,54 +324,22 @@
             <div class="row justify-content-center mb-5 xs-mb-8"
                 data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <!-- start interactive banners item -->
+                @foreach ($kerjaSama as $teks)
                 <div class="col text-center interactive-banner-style-01 last-paragraph-no-margin lg-mb-30px">
                     <figure class="m-0 position-relative hover-box border-radius-6px overflow-hidden">
-                        <img src="images/IWU/logo-600x600.png" alt="" />
+                        <img src="{{ asset('storage/' . $teks->first()->gambar_kerja_sama) }}" alt="" />
                         <div
                             class="position-absolute top-0px left-0px w-100 h-100 bg-gradient-gray-light-dark-transparent">
                         </div>
                         <figcaption
                             class="w-100 h-100 d-flex flex-column justify-content-end align-items-center p-50px md-p-30px">
                             <div class="position-relative z-index-1">
-                                <span class="fs-24 text-white mb-10px d-inline-block w-75">Hochschule für angewandte
-                                    Wissenschaften Würzburg</span>
+                                <span class="fs-24 text-white mb-10px d-inline-block w-75">{{ $teks->nama }}</span>
                             </div>
                         </figcaption>
                     </figure>
                 </div>
-                <!-- end interactive banners item -->
-                <!-- start interactive banners item -->
-                <div class="col text-center interactive-banner-style-01 last-paragraph-no-margin lg-mb-30px">
-                    <figure class="m-0 position-relative hover-box border-radius-6px overflow-hidden">
-                        <img src="images/IWU/logo-600x600.png" alt="" />
-                        <div
-                            class="position-absolute top-0px left-0px w-100 h-100 bg-gradient-gray-light-dark-transparent">
-                        </div>
-                        <figcaption
-                            class="w-100 h-100 d-flex flex-column justify-content-end align-items-center p-50px md-p-30px">
-                            <div class="position-relative z-index-1">
-                                <span class="fs-24 text-white mb-10px d-inline-block w-75">Hanyang University</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- end interactive banners item -->
-                <!-- start interactive banners item -->
-                <div class="col text-center interactive-banner-style-01 last-paragraph-no-margin">
-                    <figure class="m-0 position-relative hover-box border-radius-6px overflow-hidden">
-                        <img src="images/IWU/logo-600x600.png" alt="" />
-                        <div
-                            class="position-absolute top-0px left-0px w-100 h-100 bg-gradient-gray-light-dark-transparent">
-                        </div>
-                        <figcaption
-                            class="w-100 h-100 d-flex flex-column justify-content-end align-items-center p-50px md-p-30px">
-                            <div class="position-relative z-index-1">
-                                <span class="fs-24 text-white mb-10px d-inline-block w-75">Guangdong University of
-                                    Foreign Studies, China</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
+                @endforeach
                 <!-- end interactive banners item -->
             </div>
         </div>

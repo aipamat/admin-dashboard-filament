@@ -9,6 +9,7 @@ class TentangKampus extends Model
 {
     use HasFactory;
 
+    protected $table = 'tentang_kampuses';
     protected $fillable = [
         'banner_tentang_kampus',
         'deskripsi',
