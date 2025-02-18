@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\SliderTeks;
 use App\Models\Beranda;
+use App\Models\JurusanFakultas;
+use App\Models\KerjaSama;
 
 class BerandaController extends Controller
 {
@@ -12,8 +14,11 @@ class BerandaController extends Controller
     {
         // Ambil semua data dari tabel slider_teks
         $sliderTeks = SliderTeks::all();
-        $beranda = Beranda::all();
+        $beranda = Beranda::first();
+        $jurusanFakultas = JurusanFakultas::all();
+        $kerjaSama = KerjaSama::all();
+        
 
-        return view('index', compact('sliderTeks', 'beranda'));
+        return view('index', compact('sliderTeks', 'beranda', 'jurusanFakultas', 'kerjaSama'));
     }
 }

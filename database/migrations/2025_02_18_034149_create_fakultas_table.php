@@ -15,9 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('banner_fakultas');
             $table->string('deskripsi');
-            $table->foreignId('id_fakultas')->constrained('jurusan_fakultas')->cascadeOnDelete();
-            $table->string('gambar_fakultas');
-            $table->string('deskripsi_fakultas');
             $table->timestamps();
         });
     }

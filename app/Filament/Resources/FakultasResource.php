@@ -26,12 +26,7 @@ class FakultasResource extends Resource
         return $form
             ->schema([
                 Forms\Components\FileUpload::make('banner_fakultas')->required(),
-                Forms\Components\TextInput::make('deskripsi')->required(),
-                Forms\Components\Select::make('id_fakultas')
-                ->relationship('jurusan_fakultas', 'nama_fakultas')
-                ->required(),
-                Forms\Components\FileUpload::make('gambar_fakultas')->required(),
-                Forms\Components\TextInput::make('deskripsi_fakultas')->required()
+                Forms\Components\TextInput::make('deskripsi')->required()
             ]);
     }
 
@@ -40,10 +35,7 @@ class FakultasResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('banner_fakultas'),
-                Tables\Columns\TextColumn::make('deskripsi'),
-                Tables\Columns\TextColumn::make('jurusan_fakultas.nama_fakultas'),
-                Tables\Columns\ImageColumn::make('gambar_fakultas'),
-                Tables\Columns\TextColumn::make('deskripsi_fakultas')
+                Tables\Columns\TextColumn::make('deskripsi')
             ])
             ->filters([
                 //

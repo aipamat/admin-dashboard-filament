@@ -26,7 +26,9 @@ class JurusanFakultasResource extends Resource
         return $form
             ->schema([
                 Forms\Components\FileUpload::make('banner_fakultas')->required(),
+                Forms\Components\FileUpload::make('gambar_fakultas')->required(),
                 Forms\Components\TextInput::make('nama_fakultas')->required(),
+                Forms\Components\TextArea::make('deskripsi')->required(),
                 Forms\Components\Select::make('id_dekan')
                 ->relationship('dekan', 'nama_dekan')
                 ->required()
@@ -38,7 +40,9 @@ class JurusanFakultasResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('banner_fakultas'),
+                Tables\Columns\ImageColumn::make('gambar_fakultas'),
                 Tables\Columns\TextColumn::make('nama_fakultas'),
+                Tables\Columns\TextColumn::make('deskripsi'),
                 Tables\Columns\TextColumn::make('dekan.nama_dekan')
             ])
             ->filters([

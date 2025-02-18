@@ -4,21 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Fakultas extends Model
 {
     use HasFactory;
     protected $fillable = [
         'banner_fakultas',
-        'deskripsi',
-        'id_fakultas',
-        'gambar_fakultas',
-        'deskripsi_fakultas'
+        'deskripsi'
     ];
 
-    public function jurusan_fakultas(): BelongsTo
-    {
-        return $this->belongsTo(JurusanFakultas::class, 'id_fakultas');
-    }
 }

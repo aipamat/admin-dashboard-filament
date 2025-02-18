@@ -195,9 +195,10 @@
     </header>
     <!-- end header -->
     <!-- start banner slider -->
-    <section
-        class="p-0 top-space-margin full-screen md-h-600px sm-h-500px border-top border-4 border-color-base-color position-relative"
-        data-parallax-background-ratio="0.3" style="background-image: url('{{ asset($beranda->first()->slider) }}')">
+    <section class="p-0 top-space-margin full-screen md-h-600px sm-h-500px border-top border-4 border-color-base-color position-relative"
+         data-parallax-background-ratio="0.3"
+         style="background-image: url('{{ asset('storage/' . $beranda->first()->slider) }}')">
+    <!-- Konten lainnya -->
         <div class="opacity-light bg-black"></div>
         <div class="container h-100 position-relative">
             <div class="row align-items-center h-100 justify-content-center">
@@ -271,12 +272,12 @@
                             Sejak</span>2008</span>
                     <div class="w-75 overflow-hidden position-relative xs-w-80 border-radius-4px float-end"
                         data-anime='{ "effect": "slide", "color": "#d418a4", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay":400}'>
-                        <img class="w-100" src="{{ asset($beranda->first()->gambar_dekor1) }}" alt="Dekorasi 1">
+                        <img class="w-100" src="{{ asset('storage/' . $beranda->first()->gambar_dekor1) }}" alt="Dekorasi 1">
                     </div>
                     <div class="position-absolute left-minus-70px md-left-15px bottom-minus-50px w-55 overflow-hidden"
                         data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)"
                         data-anime='{ "effect": "slide", "color": "#ffffff", "direction":"lr", "easing": "easeOutQuad", "duration": 600, "delay":500}'>
-                        <img class="w-100" src="{{ asset($beranda->first()->gambar_dekor2) }}" alt="Dekorasi 2">
+                        <img class="w-100" src="{{ asset('storage/' . $beranda->first()->gambar_dekor2) }}" alt="Dekorasi 2">
                     </div>
                 </div>
             </div>
@@ -314,103 +315,27 @@
             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center"
                 data-anime='{ "el": "childs", "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <!-- start rotate box item -->
+                @foreach ($jurusanFakultas as $jurusan)
                 <div class="col text-center rotate-box-style-01 lg-mb-45px"
                     data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
                     <div class="rm-rotate-box text-center">
                         <div class="flipper to-left">
                             <div class="thumb-wrap">
                                 <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
-                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
+                                    style="background-image:url('{{ asset('storage/' . $jurusan->gambar_fakultas) }}')">
                                 </div>
                                 <div class="back border-radius-4px overflow-hidden">
                                     <div class="box-overlay bg-base-color"></div>
                                     <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                        <i class="line-icon-Atom align-middle icon-extra-large text-white mb-20px"></i>
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas Sains
-                                            dan Teknologi mengembangkan riset dan inovasi.</p>
+                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">{{ $jurusan->deskripsi }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas Sains dan
-                                Teknologi</span>
+                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas {{ $jurusan->nama_fakultas }}</span>
                         </div>
                     </div>
                 </div>
-                <!-- end rotate box item -->
-
-                <!-- start rotate box item -->
-                <div class="col text-center rotate-box-style-01 lg-mb-45px"
-                    data-bottom-top="transform: translateY(-40px)" data-top-bottom="transform: translateY(40px)">
-                    <div class="rm-rotate-box text-center">
-                        <div class="flipper to-left">
-                            <div class="thumb-wrap">
-                                <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
-                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
-                                </div>
-                                <div class="back border-radius-4px overflow-hidden">
-                                    <div class="box-overlay bg-base-color"></div>
-                                    <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                        <i class="fa fa-chart-bar align-middle icon-extra-large text-white mb-20px"></i>
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas Ilmu
-                                            Sosial dan Bisnis mengembangkan kemampuan sosial dan bisnis.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas Ilmu Sosial dan
-                                Bisnis</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- end rotate box item -->
-
-                <!-- start rotate box item -->
-                <div class="col text-center rotate-box-style-01 lg-mb-45px"
-                    data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
-                    <div class="rm-rotate-box text-center">
-                        <div class="flipper to-left">
-                            <div class="thumb-wrap">
-                                <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
-                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
-                                </div>
-                                <div class="back border-radius-4px overflow-hidden">
-                                    <div class="box-overlay bg-base-color"></div>
-                                    <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                        <i class="fa fa-wrench align-middle icon-extra-large text-white mb-20px"></i>
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas Vokasi
-                                            mempersiapkan keterampilan praktis di dunia profesional.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas Vokasi</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- end rotate box item -->
-
-
-                <!-- start rotate box item -->
-                <div class="col text-center rotate-box-style-01 md-mb-45px"
-                    data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
-                    <div class="rm-rotate-box text-center">
-                        <div class="flipper to-left">
-                            <div class="thumb-wrap">
-                                <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
-                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
-                                </div>
-                                <div class="back border-radius-4px overflow-hidden">
-                                    <div class="box-overlay bg-base-color"></div>
-                                    <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                        <i class="line-icon-Book align-middle icon-extra-large text-white mb-20px"></i>
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas
-                                            Pascasarjana menawarkan program lanjutan untuk pengembangan akademik.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas
-                                Pascasarjana</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <!-- end rotate box item -->
             </div>
         </div>
