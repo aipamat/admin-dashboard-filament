@@ -9,6 +9,7 @@ class Beranda extends Model
 {
     use HasFactory;
 
+    protected $table = 'berandas';
     protected $fillable = [
         'slider',
         'gambar_dekor1',

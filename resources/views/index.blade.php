@@ -197,7 +197,7 @@
     <!-- start banner slider -->
     <section
         class="p-0 top-space-margin full-screen md-h-600px sm-h-500px border-top border-4 border-color-base-color position-relative"
-        data-parallax-background-ratio="0.3" style="background-image: url('images/IWU/logo.png')">
+        data-parallax-background-ratio="0.3" style="background-image: url('{{ asset($beranda->first()->slider) }}')">
         <div class="opacity-light bg-black"></div>
         <div class="container h-100 position-relative">
             <div class="row align-items-center h-100 justify-content-center">
@@ -271,12 +271,12 @@
                             Sejak</span>2008</span>
                     <div class="w-75 overflow-hidden position-relative xs-w-80 border-radius-4px float-end"
                         data-anime='{ "effect": "slide", "color": "#d418a4", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay":400}'>
-                        <img class="w-100" src="images/IWU/logo.png" alt="">
+                        <img class="w-100" src="{{ asset($beranda->first()->gambar_dekor1) }}" alt="Dekorasi 1">
                     </div>
                     <div class="position-absolute left-minus-70px md-left-15px bottom-minus-50px w-55 overflow-hidden"
                         data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)"
                         data-anime='{ "effect": "slide", "color": "#ffffff", "direction":"lr", "easing": "easeOutQuad", "duration": 600, "delay":500}'>
-                        <img class="w-100 border-radius-4px" src="images/IWU/logo.png" alt="">
+                        <img class="w-100" src="{{ asset($beranda->first()->gambar_dekor2) }}" alt="Dekorasi 2">
                     </div>
                 </div>
             </div>
@@ -286,48 +286,14 @@
                 <div class="col swiper swiper-width-auto feather-shadow text-center"
                     data-slider-options='{ "slidesPerView": "auto", "spaceBetween":0, "centeredSlides": true, "speed": 10000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":1, "disableOnInteraction": false }, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "slide" }'>
                     <div class="swiper-wrapper marquee-slide">
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Kampus
-                                dengan fasilitas ruang kelas yang nyaman.</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Area
-                                parkir luas dan aman bagi mahasiswa.</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Lingkungan
-                                kampus yang asri dan mendukung suasana belajar.</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Ruang
-                                pertemuan dan diskusi yang nyaman untuk kegiatan mahasiswa.</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Laboratorium
-                                yang mendukung kegiatan praktikum dan riset mahasiswa.</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Kantin
-                                dengan berbagai pilihan makanan sehat dan terjangkau.</div>
-                        </div>
-                        <!-- end client item -->
+                        @foreach ($sliderTeks as $teks)
+                            <div class="swiper-slide">
+                                <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray">
+                                    <span class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>
+                                    {{ $teks->slider_teks }}
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
