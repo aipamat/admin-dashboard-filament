@@ -327,7 +327,7 @@
                 @foreach ($kerjaSama as $teks)
                 <div class="col text-center interactive-banner-style-01 last-paragraph-no-margin lg-mb-30px">
                     <figure class="m-0 position-relative hover-box border-radius-6px overflow-hidden">
-                        <img src="{{ asset('storage/' . $teks->first()->gambar_kerja_sama) }}" alt="" />
+                        <img src="{{ asset('storage/' . $teks->gambar_kerja_sama) }}" alt="" />
                         <div
                             class="position-absolute top-0px left-0px w-100 h-100 bg-gradient-gray-light-dark-transparent">
                         </div>
