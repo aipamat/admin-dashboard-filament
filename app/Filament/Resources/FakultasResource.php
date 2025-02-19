@@ -23,7 +23,7 @@ class FakultasResource extends Resource
 {
     protected static ?string $model = Fakultas::class;
 
-    protected static ?string $navigationGroup = 'Fakultas';
+    protected static ?string $navigationGroup = 'Fakultas & Program Studi';
     protected static ?string $navigationLabel = 'Fakultas';
 
     protected static ?string $navigationIcon = 'heroicon-o-list-bullet';
@@ -42,7 +42,10 @@ class FakultasResource extends Resource
                 ->label('Nama Pimpinan Fakultas')
                 ->relationship('pimpinan', 'nama', function ($query) {
                     return $query->where('status', 'Dekan');
-                }),
+                })
+                ->helperText('Pilih Pimpinan Sesuai Dengan Fakultas')
+                ->placeholder('Pilih Pimpinan Fakultas')
+                ->required(),
                 FileUpload::make('banner')
                 ->label('Banner Halaman Utama')
                 ->helperText('Harus ukuran (1920x525).')
