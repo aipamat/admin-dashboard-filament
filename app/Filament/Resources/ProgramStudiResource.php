@@ -23,7 +23,7 @@ class ProgramStudiResource extends Resource
     protected static ?string $navigationGroup = 'Fakultas & Program Studi';
     protected static ?string $navigationLabel = 'Program Studi';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-list-bullet';
 
     public static function form(Form $form): Form
     {
