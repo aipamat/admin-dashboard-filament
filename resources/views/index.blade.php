@@ -302,6 +302,7 @@
 
     </section>
     <!-- end section -->
+    
     <!-- start section -->
     <section class="bg-very-light-gray overlap-height position-relative background-position-center background-repeat"
         style="background-image: url('images/vertical-center-line-bg-dark.svg')">
@@ -315,54 +316,79 @@
             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center"
                 data-anime='{ "el": "childs", "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <!-- start rotate box item -->
-                @foreach ($jurusanFakultas as $jurusan)
                 <div class="col text-center rotate-box-style-01 lg-mb-45px"
                     data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
                     <div class="rm-rotate-box text-center">
                         <div class="flipper to-left">
                             <div class="thumb-wrap">
                                 <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
-                                    style="background-image:url('{{ asset('storage/' . $jurusan->gambar_fakultas) }}')">
+                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
                                 </div>
                                 <div class="back border-radius-4px overflow-hidden">
                                     <div class="box-overlay bg-base-color"></div>
                                     <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">{{ $jurusan->deskripsi }}</p>
+                                        <i class="line-icon-Atom align-middle icon-extra-large text-white mb-20px"></i>
+                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas Sains
+                                            dan Teknologi mengembangkan riset dan inovasi.</p>
                                     </div>
                                 </div>
                             </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas {{ $jurusan->nama_fakultas }}</span>
+                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas Sains dan
+                                Teknologi</span>
                         </div>
                     </div>
                 </div>
-                @endforeach
                 <!-- end rotate box item -->
-            </div>
-        </div>
-    </section>
-    <!-- end section -->
-    <!-- start section -->
-    <section class="background-position-center background-repeat"
-        style="background-image: url('images/vertical-center-line-bg.svg')">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center"
-                    data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <h2 class="alt-font mb-5px text-dark-gray ls-minus-2px">Kerja Sama</h2>
-                    <span class="d-inline-block">Membangun hubungan yang kuat untuk kemajuan bersama.</span>
-                </div>
-            </div>
-            <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 text-center justify-content-center clients-style-05 mb-4 sm-mb-7"
-                data-anime='{ "el": "childs", "opacity": [0,1], "duration": 500, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
-                <!-- start client item -->
-                @foreach ($kerjaSama as $kerjaSama)
-                <div class="col mt-5 sm-mb-30px">
-                    <div class="client-box">
-                        <a href="#"><img src="{{ asset('storage/' . $kerjaSama->gambar_kerja_sama) }}" alt="" /></a>
-                        <p class="fs-22 alt-font text-dark mt-2">{{ $kerjaSama->nama }}</p>
+
+                <!-- start rotate box item -->
+                <div class="col text-center rotate-box-style-01 lg-mb-45px"
+                    data-bottom-top="transform: translateY(-40px)" data-top-bottom="transform: translateY(40px)">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
+                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="box-overlay bg-base-color"></div>
+                                    <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
+                                        <i class="fa fa-chart-bar align-middle icon-extra-large text-white mb-20px"></i>
+                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas Ilmu
+                                            Sosial dan Bisnis mengembangkan kemampuan sosial dan bisnis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas Ilmu Sosial dan
+                                Bisnis</span>
+                        </div>
                     </div>
                 </div>
-                @endforeach
+                <!-- end rotate box item -->
+
+                <!-- start rotate box item -->
+                <div class="col text-center rotate-box-style-01 md-mb-45px"
+                    data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
+                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="box-overlay bg-base-color"></div>
+                                    <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
+                                        <i class="line-icon-Book align-middle icon-extra-large text-white mb-20px"></i>
+                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas
+                                            Pascasarjana menawarkan program lanjutan untuk pengembangan akademik.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas
+                                Pascasarjana</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
             </div>
         </div>
     </section>

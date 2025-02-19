@@ -15,10 +15,9 @@ class BerandaController extends Controller
         // Ambil semua data dari tabel slider_teks
         $sliderTeks = SliderTeks::all();
         $beranda = Beranda::first();
-        $jurusanFakultas = JurusanFakultas::all();
         $kerjaSama = KerjaSama::all();
         
 
-        return view('index', compact('sliderTeks', 'beranda', 'jurusanFakultas', 'kerjaSama'));
+        return view('index', compact('sliderTeks', 'beranda', 'kerjaSama'));
     }
 }
