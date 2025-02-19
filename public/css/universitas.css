@@ -201,6 +201,9 @@ header .navbar-brand img {
     color: var(--dark-gray);
 }
 
+.text-justify {
+    text-align: justify;
+}
 
 .swiper-slide {
     background-size: contain;

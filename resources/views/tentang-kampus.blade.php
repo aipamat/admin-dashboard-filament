@@ -219,17 +219,27 @@
         style="background-image: url('images/vertical-center-line-bg.svg')">
         <div class="container overlap-gap-section">
             <div class="row">
-                <div class="col-xl-5 col-md-6 offset-xl-1 last-paragraph-no-margin"
+                <div class="col-xl-10 col-md-6 offset-xl-1 last-paragraph-no-margin"
                     data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                     <h5 class="alt-font text-dark-gray mb-10px">Visi</h5>
-                    <p class="w-90 lg-w-100">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus enim
-                        asperiores, fuga voluptate voluptates quod rerum dolores perspiciatis iure optio nihil veniam
-                        nulla vero voluptatem cum suscipit, laborum facilis dolorum.</p>
+                    <!-- Menambahkan kelas 'text-justify' -->
+                    <p class="w-100 lg-w-100 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, obcaecati,
+                        repellendus cupiditate iste impedit sunt voluptatum voluptate beatae, temporibus rerum nihil?
+                        Ratione vero numquam repudiandae beatae possimus provident neque est.</p>
                 </div>
-                <div class="col-xl-5 col-md-6 offset-xl-1 last-paragraph-no-margin"
+                <div class="col-xl-10 col-md-6 offset-xl-1 last-paragraph-no-margin mt-3"
                     data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                     <h5 class="alt-font text-dark-gray mb-10px">Misi</h5>
-                    <p class="w-90 lg-w-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, obcaecati,
+                    <!-- Menambahkan kelas 'text-justify' -->
+                    <p class="w-100 lg-w-100 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, obcaecati,
+                        repellendus cupiditate iste impedit sunt voluptatum voluptate beatae, temporibus rerum nihil?
+                        Ratione vero numquam repudiandae beatae possimus provident neque est.</p>
+                </div>
+                <div class="col-xl-10 col-md-6 offset-xl-1 last-paragraph-no-margin mt-3"
+                    data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <h5 class="alt-font text-dark-gray mb-10px">Tujuan</h5>
+                    <!-- Menambahkan kelas 'text-justify' -->
+                    <p class="w-100 lg-w-100 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, obcaecati,
                         repellendus cupiditate iste impedit sunt voluptatum voluptate beatae, temporibus rerum nihil?
                         Ratione vero numquam repudiandae beatae possimus provident neque est.</p>
                 </div>
@@ -237,6 +247,9 @@
         </div>
     </section>
     <!-- end section -->
+
+
+
 
     <!-- start section -->
     <section id="pimpinan" class="bg-very-light-gray background-position-center background-repeat position-relative"
