@@ -22,6 +22,7 @@ class PimpinanResource extends Resource
 {
     protected static ?string $model = Pimpinan::class;
 
+    protected static ?string $navigationGroup = 'Data Pendukung';
     protected static ?string $navigationLabel = 'Pimpinan';
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';

@@ -20,6 +20,7 @@ class KataSambutanResource extends Resource
 {
     protected static ?string $model = KataSambutan::class;
 
+    protected static ?string $navigationGroup = 'Data Pendukung';
     protected static ?string $navigationLabel = 'Kata Sambutan';
 
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-bottom-center-text';
