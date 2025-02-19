@@ -34,6 +34,7 @@ class ProgramStudiResource extends Resource
                 ->helperText('Maks. 50 Karakter.')
                 ->minLength(5)
                 ->maxLength(50)
+                ->unique()
                 ->required(),
                 Select::make('id_fakultas')
                 ->label('Nama Fakultas')

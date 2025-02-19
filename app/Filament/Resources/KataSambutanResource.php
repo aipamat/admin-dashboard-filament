@@ -40,6 +40,7 @@ class KataSambutanResource extends Resource
                 })
                 ->helperText('Pilih Pembuat Kata Sambutan')
                 ->placeholder('Pilih Pimpinan')
+                ->unique()
                 ->required(),
 
                 RichEditor::make('kata_sambutan')
