@@ -16,7 +16,8 @@ return new class extends Migration
             $table->text('kata_sambutan');
             $table->foreignId('id_pimpinan')
                 ->constrained('pimpinans')
-                ->onDelete('cascade');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

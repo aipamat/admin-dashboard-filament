@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('bidang');
             $table->foreignId('id_pimpinan')
                 ->constrained('pimpinans')
-                ->onDelete('cascade');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }
