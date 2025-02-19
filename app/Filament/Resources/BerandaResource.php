@@ -24,7 +24,7 @@ class BerandaResource extends Resource
     protected static ?string $navigationGroup = 'Beranda';
     protected static ?string $navigationLabel = 'Banner, dan Dekorasi Gambar';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-view-columns';
 
     public static function form(Form $form): Form
     {

@@ -22,7 +22,7 @@ class TeksIklanResource extends Resource
     protected static ?string $navigationGroup = 'Beranda';
     protected static ?string $navigationLabel = 'Teks Iklan';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-megaphone';
 
     public static function form(Form $form): Form
     {

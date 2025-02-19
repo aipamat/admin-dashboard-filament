@@ -23,7 +23,7 @@ class StrukturOrganisasiResource extends Resource
     protected static ?string $navigationGroup = 'Tentang Kampus';
     protected static ?string $navigationLabel = 'Struktur Organisasi';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-photo';
 
     public static function form(Form $form): Form
     {

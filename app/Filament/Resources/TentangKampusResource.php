@@ -25,7 +25,7 @@ class TentangKampusResource extends Resource
     protected static ?string $navigationGroup = 'Tentang Kampus';
     protected static ?string $navigationLabel = 'Banner, Deskripsi, Sejarah';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-view-columns';
 
     public static function form(Form $form): Form
     {

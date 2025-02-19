@@ -26,7 +26,7 @@ class KerjaSamaResource extends Resource
     protected static ?string $navigationGroup = 'Tentang Kampus';
     protected static ?string $navigationLabel = 'Kerja Sama';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     public static function form(Form $form): Form
     {

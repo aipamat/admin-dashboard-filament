@@ -22,7 +22,7 @@ class VisiMisiTujuanResource extends Resource
     protected static ?string $navigationGroup = 'Tentang Kampus';
     protected static ?string $navigationLabel = 'Visi, Misi, dan Tujuan';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-eye';
 
     public static function form(Form $form): Form
     {
