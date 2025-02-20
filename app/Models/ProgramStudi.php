@@ -11,6 +11,7 @@ class ProgramStudi extends Model
     use HasFactory;
     protected $fillable = [
         'id_fakultas',
+        'id_pimpinan',
         'nama'
     ];
 

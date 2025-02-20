@@ -37,6 +37,7 @@ class FakultasResource extends Resource
                 ->helperText('Maks. 100 Karakter.')
                 ->minLength(5)
                 ->maxLength(100)
+                ->unique()
                 ->required(),
                 Select::make('id_pimpinan')
                 ->label('Nama Pimpinan Fakultas')
@@ -45,6 +46,7 @@ class FakultasResource extends Resource
                 })
                 ->helperText('Pilih Pimpinan Sesuai Dengan Fakultas')
                 ->placeholder('Pilih Pimpinan Fakultas')
+                ->unique()
                 ->required(),
                 FileUpload::make('banner')
                 ->label('Banner Halaman Utama')

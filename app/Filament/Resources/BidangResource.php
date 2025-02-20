@@ -24,7 +24,7 @@ class BidangResource extends Resource
     protected static ?string $navigationGroup = 'Data Pendukung';
     protected static ?string $navigationLabel = 'Bidang';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-shield-exclamation';
 
     public static function form(Form $form): Form
     {
@@ -47,6 +47,7 @@ class BidangResource extends Resource
                 ->placeholder('Pilih Pimpinan')
                 ->unique()
                 ->required(),
+                
             ]);
     }
 
@@ -60,6 +61,11 @@ class BidangResource extends Resource
                 TextColumn::make('pimpinan.nama')
                 ->label('Nama Pimpinan')
                 ->wrap(),
+                TextColumn::make('created_at')
+                ->label('Waktu Dibuat')
+                ->dateTime('d-m-Y H:i')
+                ->timezone('Asia/Jakarta')
+                ->sortable()
             ])
             ->filters([
                 //

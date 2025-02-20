@@ -81,7 +81,12 @@ class KataSambutanResource extends Resource
                 TextColumn::make('kata_sambutan')
                 ->label('Kata Sambutan')
                 ->wrap()
-                ->html()
+                ->html(),
+                TextColumn::make('created_at')
+                ->label('Waktu Dibuat')
+                ->dateTime('d-m-Y H:i')
+                ->timezone('Asia/Jakarta')
+                ->sortable()
             ])
             ->filters([
                 //

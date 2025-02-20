@@ -196,8 +196,9 @@
     <!-- end header -->
     <!-- start banner slider -->
     <section
-        class="p-0 top-space-margin full-screen md-h-600px sm-h-500px border-top border-4 border-color-base-color position-relative"
-        data-parallax-background-ratio="0.3" style="background-image: url('images/IWU/logo.png')">
+    class="p-0 top-space-margin full-screen md-h-600px sm-h-500px border-top border-4 border-color-base-color position-relative"
+    data-parallax-background-ratio="0.3"
+    style="background-image: url('{{ Storage::url($beranda->banner) }}')">
         <div class="opacity-light bg-black"></div>
         <div class="container h-100 position-relative">
             <div class="row align-items-center h-100 justify-content-center">
@@ -271,12 +272,12 @@
                             Sejak</span>2008</span>
                     <div class="w-75 overflow-hidden position-relative xs-w-80 border-radius-4px float-end"
                         data-anime='{ "effect": "slide", "color": "#d418a4", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay":400}'>
-                        <img class="w-100" src="images/IWU/logo.png" alt="">
+                        <img class="w-100" src="{{ Storage::url($beranda->gambar_dekorasi_besar) }}" alt="">
                     </div>
                     <div class="position-absolute left-minus-70px md-left-15px bottom-minus-50px w-55 overflow-hidden"
                         data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)"
                         data-anime='{ "effect": "slide", "color": "#ffffff", "direction":"lr", "easing": "easeOutQuad", "duration": 600, "delay":500}'>
-                        <img class="w-100 border-radius-4px" src="images/IWU/logo.png" alt="">
+                        <img class="w-100 border-radius-4px" src="{{ Storage::url($beranda->gambar_dekorasi_kecil) }}" alt="">
                     </div>
                 </div>
             </div>
@@ -286,48 +287,18 @@
                 <div class="col swiper swiper-width-auto feather-shadow text-center"
                     data-slider-options='{ "slidesPerView": "auto", "spaceBetween":0, "centeredSlides": true, "speed": 10000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":1, "disableOnInteraction": false }, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "slide" }'>
                     <div class="swiper-wrapper marquee-slide">
+
                         <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Kampus
-                                dengan fasilitas ruang kelas yang nyaman.</div>
-                        </div>
+                        @foreach($teksIklans as $teksIklan)
+                            <div class="swiper-slide">
+                                <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray">
+                                    <span class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>
+                                    {{ $teksIklan->kata_iklan }}
+                                </div>
+                            </div>
+                        @endforeach
                         <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Area
-                                parkir luas dan aman bagi mahasiswa.</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Lingkungan
-                                kampus yang asri dan mendukung suasana belajar.</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Ruang
-                                pertemuan dan diskusi yang nyaman untuk kegiatan mahasiswa.</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Laboratorium
-                                yang mendukung kegiatan praktikum dan riset mahasiswa.</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="fs-28 sm-fs-22 alt-font ls-minus-05px text-dark-gray"><span
-                                    class="w-10px h-10px border border-radius-100 border-color-base-color d-inline-block ms-50px me-50px md-ms-30px md-me-30px"></span>Kantin
-                                dengan berbagai pilihan makanan sehat dan terjangkau.</div>
-                        </div>
-                        <!-- end client item -->
+
                     </div>
                 </div>
             </div>
@@ -348,6 +319,7 @@
             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center"
                 data-anime='{ "el": "childs", "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <!-- start rotate box item -->
+                 @foreach($fakultasItems as $fakultasItems)
                 <div class="col text-center rotate-box-style-01 lg-mb-45px"
                     data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
                     <div class="rm-rotate-box text-center">
@@ -359,92 +331,16 @@
                                 <div class="back border-radius-4px overflow-hidden">
                                     <div class="box-overlay bg-base-color"></div>
                                     <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                        <i class="line-icon-Atom align-middle icon-extra-large text-white mb-20px"></i>
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas Sains
-                                            dan Teknologi mengembangkan riset dan inovasi.</p>
+                                    <i class="fas fa-graduation-cap align-middle icon-extra-large text-white mb-20px"></i>
+                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">{{ $fakultasItems->deskripsi }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas Sains dan
-                                Teknologi</span>
+                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">{{ $fakultasItems->nama_fakultas }}</span>
                         </div>
                     </div>
                 </div>
-                <!-- end rotate box item -->
-
-                <!-- start rotate box item -->
-                <div class="col text-center rotate-box-style-01 lg-mb-45px"
-                    data-bottom-top="transform: translateY(-40px)" data-top-bottom="transform: translateY(40px)">
-                    <div class="rm-rotate-box text-center">
-                        <div class="flipper to-left">
-                            <div class="thumb-wrap">
-                                <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
-                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
-                                </div>
-                                <div class="back border-radius-4px overflow-hidden">
-                                    <div class="box-overlay bg-base-color"></div>
-                                    <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                        <i class="fa fa-chart-bar align-middle icon-extra-large text-white mb-20px"></i>
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas Ilmu
-                                            Sosial dan Bisnis mengembangkan kemampuan sosial dan bisnis.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas Ilmu Sosial dan
-                                Bisnis</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- end rotate box item -->
-
-                <!-- start rotate box item -->
-                <div class="col text-center rotate-box-style-01 lg-mb-45px"
-                    data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
-                    <div class="rm-rotate-box text-center">
-                        <div class="flipper to-left">
-                            <div class="thumb-wrap">
-                                <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
-                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
-                                </div>
-                                <div class="back border-radius-4px overflow-hidden">
-                                    <div class="box-overlay bg-base-color"></div>
-                                    <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                        <i class="fa fa-wrench align-middle icon-extra-large text-white mb-20px"></i>
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas Vokasi
-                                            mempersiapkan keterampilan praktis di dunia profesional.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas Vokasi</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- end rotate box item -->
-
-
-                <!-- start rotate box item -->
-                <div class="col text-center rotate-box-style-01 md-mb-45px"
-                    data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
-                    <div class="rm-rotate-box text-center">
-                        <div class="flipper to-left">
-                            <div class="thumb-wrap">
-                                <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
-                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
-                                </div>
-                                <div class="back border-radius-4px overflow-hidden">
-                                    <div class="box-overlay bg-base-color"></div>
-                                    <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                        <i class="line-icon-Book align-middle icon-extra-large text-white mb-20px"></i>
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">Fakultas
-                                            Pascasarjana menawarkan program lanjutan untuk pengembangan akademik.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">Fakultas
-                                Pascasarjana</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <!-- end rotate box item -->
             </div>
         </div>
@@ -464,25 +360,14 @@
             <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 text-center justify-content-center clients-style-05 mb-4 sm-mb-7"
                 data-anime='{ "el": "childs", "opacity": [0,1], "duration": 500, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
                 <!-- start client item -->
+                 @foreach($kerjasamaItems as $kerjasamaItems)
                 <div class="col mt-5 sm-mb-30px">
                     <div class="client-box">
-                        <a href="#"><img src="{{ asset('images/IWU/logo.png') }}" class="h-55px" alt="" /></a>
+                        <a href="#"><img src="{{ Storage::url($kerjasamaItems->gambar) }}" class="h-200px" alt="" /></a>
                     </div>
+                    <span class="fs-18 d-inline-block mt-30px fw-600 text-dark-gray">{{ $kerjasamaItems->nama }}</span>
                 </div>
-                <!-- end client item -->
-                <!-- start client item -->
-                <div class="col mt-5 sm-mb-30px">
-                    <div class="client-box">
-                        <a href="#"><img src="{{ asset('images/IWU/logo.png') }}" class="h-55px" alt="" /></a>
-                    </div>
-                </div>
-                <!-- end client item -->
-                <!-- start client item -->
-                <div class="col mt-5">
-                    <div class="client-box">
-                        <a href="#"><img src="{{ asset('images/IWU/logo.png') }}" class="h-55px" alt="" /></a>
-                    </div>
-                </div>
+                @endforeach
                 <!-- end client item -->
             </div>
         </div>
@@ -498,32 +383,32 @@
             <div
                 class="row row-cols-3 row-cols-lg-5 row-cols-sm-3 align-items-center justify-content-center mb-4 md-mb-50px xs-mb-40px instagram-follow-api position-relative">
                 <div class="col instafeed-grid md-mb-30px xs-mb-15px">
-                    <figure class="border-radius-0px"><a href="https://www.instagram.com" target="_blank"><img
+                    <figure class="border-radius-0px"><a href="https://www.instagram.com/iwuidn/" target="_blank"><img
                                 src="images/IWU/logo-600x600.png" class="insta-image" alt=""><span class="insta-icon"><i
                                     class="fa-brands fa-instagram"></i></span></a></figure>
                 </div>
                 <div class="col instafeed-grid md-mb-30px xs-mb-15px">
-                    <figure class="border-radius-0px"><a href="https://www.instagram.com" target="_blank"><img
+                    <figure class="border-radius-0px"><a href="https://www.instagram.com/iwuidn/" target="_blank"><img
                                 src="images/IWU/logo-600x600.png" class="insta-image" alt=""><span class="insta-icon"><i
                                     class="fa-brands fa-instagram"></i></span></a></figure>
                 </div>
                 <div class="col instafeed-grid md-mb-30px xs-mb-15px">
-                    <figure class="border-radius-0px"><a href="https://www.instagram.com" target="_blank"><img
+                    <figure class="border-radius-0px"><a href="https://www.instagram.com/iwuidn/" target="_blank"><img
                                 src="images/IWU/logo-600x600.png" class="insta-image" alt=""><span class="insta-icon"><i
                                     class="fa-brands fa-instagram"></i></span></a></figure>
                 </div>
                 <div class="col instafeed-grid">
-                    <figure class="border-radius-0px"><a href="https://www.instagram.com" target="_blank"><img
+                    <figure class="border-radius-0px"><a href="https://www.instagram.com/iwuidn/" target="_blank"><img
                                 src="images/IWU/logo-600x600.png" class="insta-image" alt=""><span class="insta-icon"><i
                                     class="fa-brands fa-instagram"></i></span></a></figure>
                 </div>
                 <div class="col instafeed-grid">
-                    <figure class="border-radius-0px"><a href="https://www.instagram.com" target="_blank"><img
+                    <figure class="border-radius-0px"><a href="https://www.instagram.com/iwuidn/" target="_blank"><img
                                 src="images/IWU/logo-600x600.png" class="insta-image" alt=""><span class="insta-icon"><i
                                     class="fa-brands fa-instagram"></i></span></a></figure>
                 </div>
                 <div class="absolute-middle-center z-index-1 w-auto">
-                    <a href="https://www.instagram.com" target="_blank"
+                    <a href="https://www.instagram.com/iwuidn/" target="_blank"
                         class="btn btn-large btn-switch-text btn-white btn-rounded left-icon btn-box-shadow instagram-button">
                         <span>
                             <span><i class="fa-brands fa-instagram text-base-color"></i></span>
@@ -539,7 +424,7 @@
     <!-- end section -->
 
     <!-- start section -->
-    <section class="background-position-center background-repeat overlap-height position-relative"
+    <!-- <section class="background-position-center background-repeat overlap-height position-relative"
         style="background-image: url('images/vertical-center-line-bg.svg')">
         <div class="container">
             <div class="row justify-content-center mb-5 xs-mb-7">
@@ -552,7 +437,7 @@
             </div>
             <div class="row row-cols-1 row-cols-xl-2 row-cols-lg-2 row-cols-md-1 position-relative justify-content-center mb-4 sm-mb-30px"
                 data-anime='{ "el": "childs", "perspective": [800, 1200], "scale": [1.1, 1], "rotateX": [50, 0], "opacity": [0,1], "duration": 900, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                <!-- start review item -->
+
                 <div class="col review-style-05 md-mb-30px">
                     <div
                         class="border-radius-6px bg-white box-shadow-quadruple-large border border-color-extra-medium-gray last-paragraph-no-margin">
@@ -574,9 +459,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- end review item -->
 
-                <!-- start review item -->
                 <div class="col review-style-05">
                     <div
                         class="border-radius-6px bg-white box-shadow-quadruple-large border border-color-extra-medium-gray last-paragraph-no-margin">
@@ -598,10 +481,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- end review item -->
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- end section -->
 
     <!-- start footer -->

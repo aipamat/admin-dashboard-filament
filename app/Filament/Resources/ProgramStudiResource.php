@@ -42,6 +42,15 @@ class ProgramStudiResource extends Resource
                 ->helperText('Pilih Fakultas Sesuai Dengan Program Studi')
                 ->placeholder('Pilih Fakultas Dari Program Studi')
                 ->required(),
+                Select::make('id_pimpinan')
+                ->label('Nama Kepala Prodi')
+                ->relationship('pimpinan', 'nama', function ($query) {
+                    return $query->where('status', 'Kepala Prodi');
+                })
+                ->helperText('Pilih Kepala Prodi Sesuai Dengan Program Studi')
+                ->placeholder('Pilih Kepala Prodi')
+                ->unique()
+                ->required(),
             ]);
     }
 
@@ -49,13 +58,13 @@ class ProgramStudiResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('nama')
-                ->label('Program Studi')
-                ->wrap(),
                 TextColumn::make('fakultas.nama_fakultas')
                 ->label('Fakultas')
                 ->wrap(),
-                TextColumn::make('fakultas.pimpinan.nama')
+                TextColumn::make('nama')
+                ->label('Program Studi')
+                ->wrap(),                
+                TextColumn::make('pimpinan.nama')
                 ->label('Nama Pimpinan')
                 ->wrap()
             ])

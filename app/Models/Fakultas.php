@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Fakultas extends Model
 {
     use HasFactory;
+    protected $table = 'fakultas';
     protected $fillable = [
         'banner',
         'display',
