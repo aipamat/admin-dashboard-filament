@@ -347,7 +347,7 @@
     </section>
     <!-- end section -->
     <!-- start section -->
-    <section class="background-position-center background-repeat"
+    <section id="kerja-sama" class="background-position-center background-repeat"
         style="background-image: url('images/vertical-center-line-bg.svg')">
         <div class="container">
             <div class="row justify-content-center">

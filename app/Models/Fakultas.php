@@ -20,6 +20,6 @@ class Fakultas extends Model
 
     public function pimpinan(): BelongsTo
     {
-        return $this->belongsTo(Pimpinan::class, 'id_pimpinan');
+        return $this->belongsTo(Pimpinan::class, 'id_pimpinan', 'id');
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TentangKampus extends Model
 {
     use HasFactory;
+    protected $table = 'tentang_kampuses';
     protected $fillable = [
         'banner',
         'deskripsi',

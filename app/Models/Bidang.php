@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Bidang extends Model
 {
     use HasFactory;
+    protected $table = 'bidangs';
     protected $fillable = [
         'bidang',
         'id_pimpinan'
@@ -16,6 +17,6 @@ class Bidang extends Model
 
     public function pimpinan(): BelongsTo
     {
-        return $this->belongsTo(Pimpinan::class, 'id_pimpinan');
+        return $this->belongsTo(Pimpinan::class, 'id_pimpinan', 'id');
     }
 }

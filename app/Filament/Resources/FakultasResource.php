@@ -62,7 +62,7 @@ class FakultasResource extends Resource
                 ->required(),
                 TextArea::make('deskripsi')
                 ->label('Deskripsi')
-                ->placeholder('Cth: Selamat datang di Fakultas kami, tempat di mana inovasi, ilmu pengetahuan, dan pengembangan diri bertemu untuk menciptakan masa depan yang lebih baik.')
+                ->placeholder('Cth: tempat di mana inovasi, ilmu pengetahuan, dan pengembangan diri bertemu untuk menciptakan masa depan yang lebih baik.')
                 ->helperText('Maks. 150 Karakter.')
                 ->columnSpan(2)
                 ->autosize()

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\TentangKampusController;
+use App\Models\Pimpinan;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,8 @@ Route::get('/', [BerandaController::class, 'index']);
 Route::get('/tentang-kampus', function () {
     return view('tentang-kampus');
 });
+
+Route::get('/tentang-kampus', [TentangKampusController::class, 'index']);
 
 Route::get('/fakultas', function () {
     return view('fakultas/fakultas');
