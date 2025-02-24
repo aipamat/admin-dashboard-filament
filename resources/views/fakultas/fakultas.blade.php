@@ -225,19 +225,18 @@
                 data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                 <div
                     class="col border-end xs-border-end-0 xs-border-bottom border-color-transparent-base-color sm-mb-25px xs-mb-20px xs-pb-20px">
-                    <a href="#fst" class="alt-font fs-22 text-dark-gray section-link">Fakultas Sains dan Teknologi</a>
+                    <a href="#fst" class="alt-font fs-22 text-dark-gray section-link">{{$fakultasUtamaFST->nama_fakultas}}</a>
                 </div>
                 <div
                     class="col border-end sm-border-end-0 xs-border-bottom border-color-transparent-base-color sm-mb-25px xs-mb-20px xs-pb-20px">
-                    <a href="#fisb" class="alt-font fs-22 text-dark-gray section-link">Fakultas Ilmu Sosial dan
-                        Bisnis</a>
+                    <a href="#fisb" class="alt-font fs-22 text-dark-gray section-link">{{$fakultasUtamaFISB->nama_fakultas}}</a>
                 </div>
                 <!-- <div
                     class="col border-end xs-border-end-0 xs-border-bottom border-color-transparent-base-color xs-mb-20px xs-pb-20px">
                     <a href="#fv" class="alt-font fs-22 text-dark-gray section-link">Fakultas Vokasi</a>
                 </div> -->
                 <div class="col">
-                    <a href="#fp" class="alt-font fs-22 text-dark-gray section-link">Fakultas Pascasarjana</a>
+                    <a href="#fp" class="alt-font fs-22 text-dark-gray section-link">{{$fakultasUtamaPasca->nama_fakultas}}</a>
                 </div>
             </div>
         </div>
