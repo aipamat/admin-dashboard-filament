@@ -199,7 +199,7 @@
     <!-- start page title -->
     <section
         class="page-title-separate-breadcrumbs cover-background border-top border-4 border-color-base-color top-space-margin magic-cursor round-cursor"
-        style="background-image: url(images/iwu/1.png)">
+        style="background-image: url('{{Storage::url($fakultasUtamaItems->banner_utama)}}')">
         <div class="opacity-full bg-gradient-dark-transparent"></div>
         <div class="container position-relative">
             <div class="row align-items-start align-items-lg-end justify-content-end flex-column flex-lg-row extra-small-screen"
@@ -209,8 +209,7 @@
                 </div>
                 <div class="col-xxl-5 col-lg-6 col-md-10 last-paragraph-no-margin">
                     <p class="fs-20 text-white opacity-7 md-w-80 sm-w-100">
-                        Selamat datang di Fakultas kami, tempat di mana inovasi, ilmu pengetahuan, dan pengembangan diri
-                        bertemu untuk menciptakan masa depan yang lebih baik.
+                        {{$fakultasUtamaItems->deskripsi}}
                     </p>
                 </div>
 
@@ -221,6 +220,7 @@
     <!-- start section -->
     <section class="bg-very-light-gray pt-35px pb-35px">
         <div class="container">
+            
             <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 text-center justify-content-center"
                 data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                 <div
@@ -247,7 +247,7 @@
     <section class="background-position-center background-repeat"
         style="background-image: url('images/vertical-center-line-bg.svg')">
         <div class="container">
-            <div class="row g-0 justify-content-center border-radius-6px overflow-hidden mb-8" id="fst"
+        <div class="row g-0 justify-content-center border-radius-6px overflow-hidden mb-8" id="fp"
                 data-anime='{ "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <div class="col-lg-7 md-h-400px sm-h-300px text-center">
                     <div class="swiper h-100 swiper-pagination-style-3"
@@ -255,40 +255,19 @@
                         <div class="swiper-wrapper">
                             <!-- start carousal item -->
                             <div class="swiper-slide cover-background"
-                                style="background-image: url(images/IWU/logo.png)"></div>
-                            <!-- end carousal item -->
-                            <!-- start carousal item -->
-                            <div class="swiper-slide cover-background"
-                                style="background-image: url(images/IWU/logo.png)"></div>
-                            <!-- end carousal item -->
-                            <!-- start carousal item -->
-                            <div class="swiper-slide cover-background"
-                                style="background-image: url(images/IWU/logo.png)"></div>
+                                style="background-image: url('{{Storage::url($fakultasUtamaFST->display)}}')"></div>
                             <!-- end carousal item -->
                         </div>
-                        <!-- start slider pagination -->
-                        <!--<div class="swiper-pagination slider-four-slide-pagination swiper-pagination-style-2 swiper-pagination-clickable swiper-pagination-bullets"></div>-->
-                        <!-- end slider pagination -->
-                        <!-- start slider navigation -->
-                        <div
-                            class="slider-one-slide-prev-1 bg-dark-gray-transparent-medium h-50px w-50px swiper-button-prev slider-navigation-style-01">
-                            <i class="fa-solid fa-angle-left text-white"></i>
-                        </div>
-                        <div
-                            class="slider-one-slide-next-1 bg-dark-gray-transparent-medium h-50px w-50px swiper-button-next slider-navigation-style-01">
-                            <i class="fa-solid fa-angle-right text-white"></i>
-                        </div>
-                        <!-- end slider navigation -->
                     </div>
                 </div>
                 <div class="col-lg-5 bg-very-light-gray">
                     <div class="pt-13 pb-12 ps-15 pe-15 lg-p-8 last-paragraph-no-margin">
-                        <span class="text-base-color fw-500 d-block">Fakultas</span>
                         <a href="fakultas-fst">
-                            <h4 class="alt-font text-dark-gray mb-20px ls-minus-1px d-inline-block">Sains dan Teknologi
+                            <h4 class="alt-font text-dark-gray mb-20px ls-minus-1px d-inline-block">{{$fakultasUtamaFST->nama_fakultas}}
                             </h4>
                         </a>
-                        <p class="fs-17">Fakultas Sains dan Teknologi mengembangkan riset dan inovasi.</p>
+                        <p class="fs-17">{{$fakultasUtamaFST->deskripsi}}
+                        </p>
                     </div>
                     <div
                         class="ps-15 pe-15 pt-5 pb-5 lg-ps-8 lg-pe-8 border-top border-color-transparent-dark-very-light align-items-center d-flex justify-content-center">
@@ -300,7 +279,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
             <div class="row g-0 justify-content-center border-radius-6px overflow-hidden flex-row-reverse mb-8"
                 id="fisb"
@@ -311,41 +289,17 @@
                         <div class="swiper-wrapper">
                             <!-- start carousal item -->
                             <div class="swiper-slide cover-background"
-                                style="background-image: url(images/IWU/logo.png)"></div>
-                            <!-- end carousal item -->
-                            <!-- start carousal item -->
-                            <div class="swiper-slide cover-background"
-                                style="background-image: url(images/IWU/logo.png)"></div>
-                            <!-- end carousal item -->
-                            <!-- start carousal item -->
-                            <div class="swiper-slide cover-background"
-                                style="background-image: url(images/IWU/logo.png)"></div>
+                                style="background-image: url('{{Storage::url($fakultasUtamaFISB->display)}}')"></div>
                             <!-- end carousal item -->
                         </div>
-                        <!-- start slider pagination -->
-                        <!--<div class="swiper-pagination slider-four-slide-pagination swiper-pagination-style-2 swiper-pagination-clickable swiper-pagination-bullets"></div>-->
-                        <!-- end slider pagination -->
-                        <!-- start slider navigation -->
-                        <div
-                            class="slider-one-slide-prev-1 bg-dark-gray-transparent-medium h-50px w-50px swiper-button-prev slider-navigation-style-01">
-                            <i class="fa-solid fa-angle-left text-white"></i>
-                        </div>
-                        <div
-                            class="slider-one-slide-next-1 bg-dark-gray-transparent-medium h-50px w-50px swiper-button-next slider-navigation-style-01">
-                            <i class="fa-solid fa-angle-right text-white"></i>
-                        </div>
-                        <!-- end slider navigation -->
                     </div>
                 </div>
                 <div class="col-lg-5 bg-very-light-gray">
                     <div class="pt-13 pb-12 ps-15 pe-15 lg-p-8 last-paragraph-no-margin">
-                        <span class="text-base-color fw-500 d-block">Fakultas</span>
                         <a href="fakultas-fisb">
-                            <h4 class="alt-font text-dark-gray mb-20px ls-minus-1px d-inline-block">Ilmu Sosial dan
-                                Bisnis</h4>
+                            <h4 class="alt-font text-dark-gray mb-20px ls-minus-1px d-inline-block">{{$fakultasUtamaFISB->nama_fakultas}}</h4>
                         </a>
-                        <p class="fs-17">Fakultas Ilmu Sosial dan Bisnis mengembangkan pemahaman tentang dinamika sosial
-                            dan strategi bisnis yang berkelanjutan.</p>
+                        <p class="fs-17">{{$fakultasUtamaFISB->deskripsi}}</p>
                     </div>
                     <div
                         class="ps-15 pe-15 pt-5 pb-5 lg-ps-8 lg-pe-8 border-top border-color-transparent-dark-very-light align-items-center d-flex justify-content-center">
@@ -367,41 +321,18 @@
                         <div class="swiper-wrapper">
                             <!-- start carousal item -->
                             <div class="swiper-slide cover-background"
-                                style="background-image: url(images/IWU/logo.png)"></div>
+                                style="background-image: url('{{Storage::url($fakultasUtamaPasca->display)}}')"></div>
                             <!-- end carousal item -->
-                            <!-- start carousal item -->
-                            <div class="swiper-slide cover-background"
-                                style="background-image: url(images/IWU/logo.png)"></div>
-                            <!-- end carousal item -->
-                            <!-- start carousal item -->
-                            <div class="swiper-slide cover-background"
-                                style="background-image: url(images/IWU/logo.png)"></div>
-                            <!-- end carousal item -->
-                        </div>
-                        <!-- start slider pagination -->
-                        <!--<div class="swiper-pagination slider-four-slide-pagination swiper-pagination-style-2 swiper-pagination-clickable swiper-pagination-bullets"></div>-->
-                        <!-- end slider pagination -->
-                        <!-- start slider navigation -->
-                        <div
-                            class="slider-one-slide-prev-1 bg-dark-gray-transparent-medium h-50px w-50px swiper-button-prev slider-navigation-style-01">
-                            <i class="fa-solid fa-angle-left text-white"></i>
-                        </div>
-                        <div
-                            class="slider-one-slide-next-1 bg-dark-gray-transparent-medium h-50px w-50px swiper-button-next slider-navigation-style-01">
-                            <i class="fa-solid fa-angle-right text-white"></i>
-                        </div>
-                        <!-- end slider navigation -->
+                            </div>
                     </div>
                 </div>
                 <div class="col-lg-5 bg-very-light-gray">
                     <div class="pt-13 pb-12 ps-15 pe-15 lg-p-8 last-paragraph-no-margin">
-                        <span class="text-base-color fw-500 d-block">Fakultas Pasca Sarjana</span>
                         <a href="fakultas-pasca">
-                            <h4 class="alt-font text-dark-gray mb-20px ls-minus-1px d-inline-block">Program Pascasarjana
+                            <h4 class="alt-font text-dark-gray mb-20px ls-minus-1px d-inline-block">{{$fakultasUtamaPasca->nama_fakultas}}
                             </h4>
                         </a>
-                        <p class="fs-17">Fakultas Pasca Sarjana menawarkan program-program unggulan di berbagai disiplin
-                            ilmu, memberikan kesempatan untuk mendalami keahlian lebih mendalam di bidang yang diminati.
+                        <p class="fs-17">{{$fakultasUtamaPasca->deskripsi}}
                         </p>
                     </div>
                     <div
