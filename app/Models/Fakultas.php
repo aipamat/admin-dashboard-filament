@@ -22,4 +22,9 @@ class Fakultas extends Model
     {
         return $this->belongsTo(Pimpinan::class, 'id_pimpinan', 'id');
     }
+
+    public function detailFakultas()
+    {
+        return $this->hasMany(FakultasDetail::class, 'id_fakultas');
+    }
 }

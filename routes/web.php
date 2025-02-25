@@ -49,3 +49,5 @@ Route::get('/fakultas-pasca', function () {
 Route::get('/fasilitas', function () {
     return view('kampus');
 });
+
+Route::get('/fakultas/{fakultas}', [FakultasController::class, 'show'])->name('fakultas.view');

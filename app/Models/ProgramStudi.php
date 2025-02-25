@@ -24,4 +24,9 @@ class ProgramStudi extends Model
     {
         return $this->belongsTo(Fakultas::class, 'id_fakultas');
     }
+
+    public function detailFakultas()
+    {
+        return $this->hasMany(FakultasDetail::class, 'id_program_studi');
+    }
 }

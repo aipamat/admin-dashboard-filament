@@ -24,4 +24,9 @@ class Pimpinan extends Model
     {
         return $this->hasMany(Fakultas::class, 'id_pimpinan', 'id');
     }
+
+    public function detailFakultas()
+    {
+        return $this->hasMany(FakultasDetail::class, 'id_pimpinan');
+    }
 }

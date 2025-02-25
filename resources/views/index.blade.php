@@ -320,26 +320,28 @@
                 data-anime='{ "el": "childs", "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <!-- start rotate box item -->
                  @foreach($fakultasItems as $fakultasItems)
-                <div class="col text-center rotate-box-style-01 lg-mb-45px"
-                    data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
-                    <div class="rm-rotate-box text-center">
-                        <div class="flipper to-left">
-                            <div class="thumb-wrap">
-                                <div class="front overflow-hidden h-250px md-h-250px border-radius-4px overflow-hidden"
-                                    style="background-image:url('images/IWU/fakultas-item.jpg')">
-                                </div>
-                                <div class="back border-radius-4px overflow-hidden">
-                                    <div class="box-overlay bg-base-color"></div>
-                                    <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
-                                    <i class="fas fa-graduation-cap align-middle icon-extra-large text-white mb-20px"></i>
-                                        <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">{{ $fakultasItems->deskripsi }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">{{ $fakultasItems->nama_fakultas }}</span>
-                        </div>
-                    </div>
-                </div>
+                 <a href="/fakultas/{{$fakultasItems->id}}">
+                     <div class="col text-center rotate-box-style-01 lg-mb-45px"
+                         data-bottom-top="transform: translateY(80px)" data-top-bottom="transform: translateY(-80px)">
+                         <div class="rm-rotate-box text-center">
+                             <div class="flipper to-left">
+                                 <div class="thumb-wrap">
+                                     <div class="front overflow-hidden h-250px md-h-250px border-radius-4px"
+                                         style="background-image:url('images/IWU/fakultas-item.jpg')">
+                                     </div>
+                                     <div class="back border-radius-4px overflow-hidden">
+                                         <div class="box-overlay bg-base-color"></div>
+                                         <div class="content-wrap p-40px xs-p-30px last-paragraph-no-margin">
+                                         <i class="fas fa-graduation-cap align-middle icon-extra-large text-white mb-20px"></i>
+                                             <p class="text-white opacity-7 lh-30 sm-w-70 xs-w-100 mx-auto">{{ $fakultasItems->deskripsi }}</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <span class="fs-20 d-inline-block mt-30px fw-600 text-dark-gray">{{ $fakultasItems->nama_fakultas }}</span>
+                             </div>
+                         </div>
+                     </div>
+                 </a>
                 @endforeach
                 <!-- end rotate box item -->
             </div>
