@@ -174,8 +174,8 @@
                             </li>
                         </ul>
                         <ul class="navbar-nav navbar-right justify-content-start">
-                            <li class="nav-item"><a href="fasilitas" onclick="return false"
-                                    class="nav-link">Fasilitas</a></li>
+                        <li class="nav-item"><a href="fasilitas"
+                        class="nav-link">Fasilitas</a></li>
                             <li class="nav-item"><a href="beasiswa" onclick="return false"
                                     class="nav-link">Beasiswa</a>
                             </li>
@@ -364,7 +364,7 @@
                 <div class="col mt-5 sm-mb-30px">
                     <div class="client-box">
                         <a href="#"><img src="{{ Storage::url($kerjasamaItems->gambar) }}" class="h-200px" alt="" /></a>
-                    </div>
+                    </div>w
                     <span class="fs-18 d-inline-block mt-30px fw-600 text-dark-gray">{{ $kerjasamaItems->nama }}</span>
                 </div>
                 @endforeach

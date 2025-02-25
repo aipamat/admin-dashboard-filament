@@ -176,8 +176,8 @@
                             </li>
                         </ul>
                         <ul class="navbar-nav navbar-right justify-content-start">
-                            <li class="nav-item"><a href="fasilitas" class="nav-link"
-                                    onclick="return false">Fasilitas</a></li>
+                        <li class="nav-item"><a href="fasilitas"
+                        class="nav-link">Fasilitas</a></li>
                             <li class="nav-item"><a href="beasiswa" class="nav-link"
                                     onclick="return false">Beasiswa</a>
                             </li>

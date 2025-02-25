@@ -45,3 +45,7 @@ Route::get('/fakultas-fisb', function () {
 Route::get('/fakultas-pasca', function () {
     return view('fakultas/fakultas-pasca');
 });
+
+Route::get('/fasilitas', function () {
+    return view('kampus');
+});
