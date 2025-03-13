@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\FakultasDisplay;
 use App\Models\Fakultas;
+use App\Models\FakultasDetail;
 
 class FakultasController extends Controller
 {
@@ -20,5 +21,12 @@ class FakultasController extends Controller
         ->first();
 
         return view('fakultas/fakultas', compact('fakultasUtamaItems', 'fakultasUtamaFST', 'fakultasUtamaFISB', 'fakultasUtamaPasca'));
+    }
+
+    public function show($id)
+    {
+        $fakultas = FakultasDetail::with(['fakultas', 'pimpinan', 'programStudi'])->findOrFail($id);
+
+        return view('fakultas.view', compact('fakultas'));
     }
 }
