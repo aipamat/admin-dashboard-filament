@@ -2,51 +2,60 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\KerjaSamaResource\Pages;
-use App\Filament\Resources\KerjaSamaResource\RelationManagers;
-use App\Models\KerjaSama;
+use App\Filament\Resources\BeasiswaResource\Pages;
+use App\Filament\Resources\BeasiswaResource\RelationManagers;
+use App\Models\Beasiswa;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\DatePicker;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class KerjaSamaResource extends Resource
+class BeasiswaResource extends Resource
 {
-    protected static ?string $model = KerjaSama::class;
+    protected static ?string $model = Beasiswa::class;
 
-    protected static ?string $navigationGroup = 'Tentang Kampus';
-    protected static ?string $navigationLabel = 'Kerja Sama';
-
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                FileUpload::make('banner_utama')
+                ->label('Banner Halaman Utama')
+                ->helperText('Harus ukuran (1920x526).')
+                ->image()
+                ->columnSpan(2)
+                ->required(),
+                TextArea::make('deskripsi')
+                ->label('Deskripsi')
+                ->placeholder('Cth: Kampus kami menawarkan pendidikan berkualitas dengan fasilitas terbaik, untuk membantu Anda mencapai tujuan akademik dan profesional.')
+                ->helperText('Maks. 150 Karakter.')
+                ->columnSpan(2)
+                ->autosize()
+                ->minLength(5)
+                ->maxLength(150)
+                ->required(),
                 FileUpload::make('gambar')
-                ->label('Gambar Mitra')
-                ->helperText('Harus ukuran (600x742).')
+                ->label('Gambar Beasiswa')
+                ->helperText('Harus ukuran (1920x526).')
                 ->image()
                 ->columnSpan(2)
                 ->required(),
                 TextInput::make('nama')
-                ->label('Nama Mitra')
-                ->helperText('Maks. 50 Karakter.')
+                ->label('Nama Beasiswa')
+                ->placeholder('Kampus 1 : International Women University')    
+                ->helperText('Maks. 70 Karakter.')
                 ->columnSpan(2)
                 ->minLength(5)
-                ->maxLength(50)
+                ->maxLength(70)
                 ->required(),
-                RichEditor::make('deskripsi')
-                ->label('Tujuan')
+                RichEditor::make('deskripsi_beasiswa')
+                ->label('Deskripsi Beasiswa')
                 ->helperText('Tidak ada batasan panjang karakter.')
                 ->minLength(5)
                 ->toolbarButtons([
@@ -66,12 +75,7 @@ class KerjaSamaResource extends Resource
                     'undo',
                 ])
                 ->columnSpan(2)
-                ->required(),
-                DatePicker::make('tanggal')
-                ->label('Tanggal, Bulan, dan Tahun Kerja Sama')
-                ->native(false)
-                ->columnSpan(2)
-                ->timezone('Asia/Jakarta')
+                ->disableGrammarly()
                 ->required()
             ]);
     }
@@ -80,20 +84,7 @@ class KerjaSamaResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('gambar')
-                ->label('Gambar Mitra'),
-                TextColumn::make('nama')
-                ->label('Nama Mitra')
-                ->wrap(),
-                TextColumn::make('deskripsi')
-                ->label('Deskripsi')
-                ->wrap()
-                ->html(),
-                TextColumn::make('tanggal')
-                ->label('Tanggal Kerja Sama')
-                ->date('d-m-Y')
-                ->wrap()
-                ->sortable(),
+                
                 TextColumn::make('created_at')
                 ->label('Waktu Dibuat')
                 ->dateTime('d-m-Y H:i')
@@ -123,9 +114,9 @@ class KerjaSamaResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListKerjaSamas::route('/'),
-            'create' => Pages\CreateKerjaSama::route('/create'),
-            'edit' => Pages\EditKerjaSama::route('/{record}/edit'),
+            'index' => Pages\ListBeasiswas::route('/'),
+            'create' => Pages\CreateBeasiswa::route('/create'),
+            'edit' => Pages\EditBeasiswa::route('/{record}/edit'),
         ];
     }
 }

@@ -2,15 +2,14 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\KerjaSamaResource\Pages;
-use App\Filament\Resources\KerjaSamaResource\RelationManagers;
-use App\Models\KerjaSama;
+use App\Filament\Resources\FasilitasResource\Pages;
+use App\Filament\Resources\FasilitasResource\RelationManagers;
+use App\Models\Fasilitas;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\DatePicker;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -19,34 +18,35 @@ use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class KerjaSamaResource extends Resource
+class FasilitasResource extends Resource
 {
-    protected static ?string $model = KerjaSama::class;
+    protected static ?string $model = Fasilitas::class;
 
-    protected static ?string $navigationGroup = 'Tentang Kampus';
-    protected static ?string $navigationLabel = 'Kerja Sama';
+    protected static ?string $navigationGroup = 'Fasilitas';
+    protected static ?string $navigationLabel = 'Fasilitas';
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                FileUpload::make('gambar')
-                ->label('Gambar Mitra')
-                ->helperText('Harus ukuran (600x742).')
+                FileUpload::make('gambar_fasilitas')
+                ->label('Gambar Fasilitas')
+                ->helperText('Harus ukuran (1920x526).')
                 ->image()
                 ->columnSpan(2)
                 ->required(),
-                TextInput::make('nama')
-                ->label('Nama Mitra')
-                ->helperText('Maks. 50 Karakter.')
+                TextInput::make('nama_fasilitas')
+                ->label('Nama Fasilitas')
+                ->placeholder('Masukan nama fasilitas')    
+                ->helperText('Maks. 70 Karakter.')
                 ->columnSpan(2)
                 ->minLength(5)
-                ->maxLength(50)
+                ->maxLength(70)
                 ->required(),
                 RichEditor::make('deskripsi')
-                ->label('Tujuan')
+                ->label('Deskripsi Fasilitas')
                 ->helperText('Tidak ada batasan panjang karakter.')
                 ->minLength(5)
                 ->toolbarButtons([
@@ -66,12 +66,6 @@ class KerjaSamaResource extends Resource
                     'undo',
                 ])
                 ->columnSpan(2)
-                ->required(),
-                DatePicker::make('tanggal')
-                ->label('Tanggal, Bulan, dan Tahun Kerja Sama')
-                ->native(false)
-                ->columnSpan(2)
-                ->timezone('Asia/Jakarta')
                 ->required()
             ]);
     }
@@ -80,20 +74,15 @@ class KerjaSamaResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('gambar')
-                ->label('Gambar Mitra'),
-                TextColumn::make('nama')
-                ->label('Nama Mitra')
+                ImageColumn::make('gambar_fasilitas')
+                ->label('Gambar'),
+                TextColumn::make('nama_fasilitas')
+                ->label('Nama Fasilitas')
                 ->wrap(),
                 TextColumn::make('deskripsi')
-                ->label('Deskripsi')
-                ->wrap()
-                ->html(),
-                TextColumn::make('tanggal')
-                ->label('Tanggal Kerja Sama')
-                ->date('d-m-Y')
-                ->wrap()
-                ->sortable(),
+                ->label('Deskripsi Fasilitas')
+                ->html()
+                ->wrap(),
                 TextColumn::make('created_at')
                 ->label('Waktu Dibuat')
                 ->dateTime('d-m-Y H:i')
@@ -123,9 +112,9 @@ class KerjaSamaResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListKerjaSamas::route('/'),
-            'create' => Pages\CreateKerjaSama::route('/create'),
-            'edit' => Pages\EditKerjaSama::route('/{record}/edit'),
+            'index' => Pages\ListFasilitas::route('/'),
+            'create' => Pages\CreateFasilitas::route('/create'),
+            'edit' => Pages\EditFasilitas::route('/{record}/edit'),
         ];
     }
 }

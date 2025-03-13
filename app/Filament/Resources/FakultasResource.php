@@ -83,7 +83,8 @@ class FakultasResource extends Resource
                 ->label('Display Gambar'),
                 TextColumn::make('nama_fakultas')
                 ->label('Nama Fakultas')
-                ->wrap(),
+                ->wrap()
+                ->sortable(),
                 TextColumn::make('pimpinan.nama')
                 ->label('Nama Pimpinan')
                 ->wrap(),

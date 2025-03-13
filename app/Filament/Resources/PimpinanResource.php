@@ -52,7 +52,7 @@ class PimpinanResource extends Resource
                     'Kepala Prodi' => 'Kepala Prodi',
                 ])
                 ->required() // Menandakan status wajib dipilih
-                ->placeholder('Pilih Status Jabatan'),
+                ->placeholder('Pilih Status Jabatan')
             ]);
     }
 

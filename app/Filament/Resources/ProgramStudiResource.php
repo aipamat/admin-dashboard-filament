@@ -51,6 +51,7 @@ class ProgramStudiResource extends Resource
                 ->placeholder('Pilih Kepala Prodi')
                 ->unique()
                 ->required(),
+                
             ]);
     }
 
@@ -60,13 +61,19 @@ class ProgramStudiResource extends Resource
             ->columns([
                 TextColumn::make('fakultas.nama_fakultas')
                 ->label('Fakultas')
-                ->wrap(),
+                ->wrap()
+                ->sortable(),
                 TextColumn::make('nama')
                 ->label('Program Studi')
                 ->wrap(),                
                 TextColumn::make('pimpinan.nama')
                 ->label('Nama Pimpinan')
-                ->wrap()
+                ->wrap(),
+                TextColumn::make('created_at')
+                ->label('Waktu Dibuat')
+                ->dateTime('d-m-Y H:i')
+                ->timezone('Asia/Jakarta')
+                ->sortable()
             ])
             ->filters([
                 //

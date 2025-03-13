@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\TentangKampusController;
 use App\Http\Controllers\FakultasController;
+use App\Http\Controllers\FasilitasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,5 @@ Route::get('/fakultas-pasca', function () {
 Route::get('/fasilitas', function () {
     return view('kampus');
 });
+
+Route::get('/fasilitas', [FasilitasController::class, 'index']);

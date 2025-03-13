@@ -195,8 +195,8 @@
     </header>
     <!-- end header -->
     <section
-        class="page-title-separate-breadcrumbs cover-background border-top border-4 border-color-base-color top-space-margin magic-cursor round-cursor"
-        style="background-image: url(images/IWU/2.png)">
+        class="page-title-separate-breadcrumbs cover-background border-top border-4 border-color-base-color top-space-margin"
+        style="background-image: url('{{Storage::url($kampusUtama->banner_utama)}}')">
         <div class="opacity-full bg-gradient-dark-transparent"></div>
         <div class="container position-relative">
             <div class="row align-items-start align-items-lg-end justify-content-end flex-column flex-lg-row extra-small-screen"
@@ -205,6 +205,7 @@
                     <h1 class="text-white alt-font fw-500 ls-minus-2px mb-0">Fasilitas</h1>
                 </div>
                 <div class="col-xxl-5 col-lg-6 col-md-10 last-paragraph-no-margin">
+                    <p class="fs-20 text-white opacity-7 md-w-80 sm-w-100">{{ $kampusUtama->deskripsi }}</p>
                 </div>
             </div>
         </div>
@@ -226,68 +227,19 @@
             <!-- Konten 5 Kolom -->
             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center text-center"
                 data-anime='{ "el": "childs", "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-
+                @foreach($detailKampus as $detailKampusItems)
                 <!-- Kampus 1 -->
                 <div class="col d-flex align-items-stretch mb-4">
-                    <a href="kampus1.html" class="card-link">
+                    <a href="#" class="card-link">
                         <div class="card border-0 shadow h-100">
-                            <img src="images/IWU/logo.png" class="card-img-top" alt="International Women University">
+                            <img src="{{Storage::url($detailKampusItems->gambar_kampus)}}" class="card-img-top" alt="International Women University">
                             <div class="card-body">
-                                <h5 class="card-title alt-font text-dark-gray">Kampus 1: International Women University</h5>
+                                <h5 class="card-title alt-font text-dark-gray">{{$detailKampusItems->nama_kampus}}</h5>
                             </div>
                         </div>
                     </a>
                 </div>
-
-                <!-- Kampus 2 -->
-                <div class="col d-flex align-items-stretch mb-4">
-                    <a href="kampus2.html" class="card-link">
-                        <div class="card border-0 shadow h-100">
-                            <img src="images/IWU/logo.png" class="card-img-top" alt="Kampus 2">
-                            <div class="card-body">
-                                <h5 class="card-title alt-font text-dark-gray">Kampus 2</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Kampus 3 -->
-                <div class="col d-flex align-items-stretch mb-4">
-                    <a href="kampus3.html" class="card-link">
-                        <div class="card border-0 shadow h-100">
-                            <img src="images/IWU/logo.png" class="card-img-top" alt="Kampus 3">
-                            <div class="card-body">
-                                <h5 class="card-title alt-font text-dark-gray">Kampus 3</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Kampus 4 -->
-                <div class="col d-flex align-items-stretch mb-4">
-                    <a href="kampus4.html" class="card-link">
-                        <div class="card border-0 shadow h-100">
-                            <img src="images/IWU/logo.png" class="card-img-top" alt="Kampus 4">
-                            <div class="card-body">
-                                <h5 class="card-title alt-font text-dark-gray">Kampus 4</h5>
-                                
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Kampus 5 -->
-                <div class="col d-flex align-items-stretch mb-4">
-                    <a href="kampus5.html" class="card-link">
-                        <div class="card border-0 shadow h-100">
-                            <img src="images/IWU/logo.png" class="card-img-top" alt="Kampus 5">
-                            <div class="card-body">
-                                <h5 class="card-title alt-font text-dark-gray">Kampus 5</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>

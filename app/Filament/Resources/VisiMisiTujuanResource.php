@@ -95,6 +95,7 @@ class VisiMisiTujuanResource extends Resource
                     'undo',
                 ])
                 ->columnSpan(2)
+                ->disableGrammarly()
                 ->required()
             ]);
     }

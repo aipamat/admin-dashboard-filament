@@ -295,7 +295,7 @@
                 @foreach($pimpinanDekanItems as $pimpinanDekanItems)
                     <div class="col-12 col-md-4 mb-30px">
                         <div class="hover-box md-mb-30px">
-                            <img class="w-50 mx-auto d-block" src="{{ Storage::url($pimpinanWakilRektor->foto) }}" alt="Rektor">
+                            <img class="w-50 mx-auto d-block" src="{{ Storage::url($pimpinanDekanItems->foto) }}" alt="Rektor">
                             <div class="p-30px last-paragraph-no-margin text-center">
                                 <span class="d-inline-block fs-22 alt-font">{{ $pimpinanDekanItems->status }}</span>
                                 @foreach($pimpinanDekanItems->namaFakultas as $pimpinanFakultas) 

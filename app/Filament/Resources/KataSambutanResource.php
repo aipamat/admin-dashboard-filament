@@ -77,7 +77,8 @@ class KataSambutanResource extends Resource
                 ->wrap(),
                 TextColumn::make('pimpinan.status')
                 ->label('Jabatan')
-                ->wrap(),
+                ->wrap()
+                ->sortable(),
                 TextColumn::make('kata_sambutan')
                 ->label('Kata Sambutan')
                 ->wrap()

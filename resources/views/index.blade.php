@@ -364,7 +364,7 @@
                 <div class="col mt-5 sm-mb-30px">
                     <div class="client-box">
                         <a href="#"><img src="{{ Storage::url($kerjasamaItems->gambar) }}" class="h-200px" alt="" /></a>
-                    </div>w
+                    </div>
                     <span class="fs-18 d-inline-block mt-30px fw-600 text-dark-gray">{{ $kerjasamaItems->nama }}</span>
                 </div>
                 @endforeach
